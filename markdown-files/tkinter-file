@@ -1,1 +1,4 @@
-
+Import the tkinter module. 
+ You may use 
+ - (a) ```import tkinter *``` or  
+ - (b) ```import tkinter as tk```.
