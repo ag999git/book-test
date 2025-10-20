@@ -4,4 +4,4 @@ Import the tkinter module.
  - (a) import tkinter *   
  - (b) import tkinter as tk.
 ```
-Check out [this issue](https://github.com/user/repo/issues/42)
+Check out [this issue](https://github.com/ag999git/jupyter_notebooks/blob/master/anscombes_quartets.py)
