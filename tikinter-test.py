@@ -1,6 +1,25 @@
 ######## NEXT ###########
 
 ######## NEXT ###########
+#To create a simple Tkinter Python app, follow these basic steps
+# Step 1: Import the Tkinter module
+from tkinter import *
+print("Tkinter module imported successfully.")
+# Step 2: Create the main application window
+root = Tk()
+print("Main application window created.")
+# Step 3: Use .title() to set the title of the window
+root.title("My Tkinter Application")
+print("Window title set to 'My Tkinter Application'.")
+# Step 4: Create a widget of type Label
+label = Label(root, text="Hello World")
+print("Label widget created with text 'Hello, World'.")
+# Step 5: Use .pack() to place the Label widget in the window
+label.pack()
+print("Label widget packed into the window.")
+# Step 6: Start the Tkinter event loop
+root.mainloop()
+print("Tkinter event loop exited.")
 
 
 ######## NEXT ###########
@@ -122,13 +141,8 @@ root.mainloop()
 # Following line will not be executed until the window is closed
 print("Tkinter event loop ended.")
 
-
-
-
 ######## NEXT ###########
-
-######## NEXT ###########
-# 2. Write a short script which explains the use of Widget Placement Commands of the Tkinter Python library
+# Write a short script which explains the use of Widget Placement Commands of the Tkinter Python library
 import tkinter as tk
 
 root = tk.Tk()
