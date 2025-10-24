@@ -201,3 +201,94 @@ btn2 = tk.Button(root, text="Command Button", command=on_command)
 btn2.pack(pady=5)
 
 root.mainloop()
+
+######## NEXT ###########
+# 2.19 Write a small script which gives common Configuration and Properties of the Tkinter library.
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Configuration Example")
+root.geometry("300x150")
+
+# Create a Label
+lbl = tk.Label(root, text="Original Text", fg="blue")
+lbl.pack(pady=10)
+
+# Function1 to update text using config()
+def update_text():
+    lbl.config(text="Updated using config()") # Change label text
+
+# Function2 to get current text using cget()
+def show_text():
+    current = lbl.cget("text") # Get 'text' property
+    lbl.config(text=f"Current: {current}")
+
+# Function3 to change color using ['property'] = value
+def change_color():
+    lbl["fg"] = "red"  # Alternate way to set property
+    lbl["text"] = "Color changed using ['fg']"
+
+# Call to update_text() functions
+tk.Button(root, text="Update Text", 
+          command=update_text).pack(pady=3)
+# Call to show_text function
+tk.Button(root, text="Show Current Text", 
+          command=show_text).pack(pady=3)
+# Call to change_color() function
+tk.Button(root, text="Change Color", 
+          command=change_color).pack(pady=3)
+
+root.mainloop()
+
+######## NEXT ###########
+# Write a small script which shows the use of Dialog and message commands in Tkinter Python.
+import tkinter as tk
+from tkinter import messagebox, filedialog, colorchooser, simpledialog
+
+root = tk.Tk()
+root.title("Dialog Box Examples")
+root.geometry("300x200")
+
+# Function to show info message box
+def show_info():
+    messagebox.showinfo("Information", "This is an info popup!")
+
+# Function to open file dialog
+def open_file():
+    filename = filedialog.askopenfilename(title="Select a file")
+    if filename:
+        messagebox.showinfo("Selected File", f"You chose:\n{filename}")
+
+# Function to open color chooser
+def choose_color():
+    color = colorchooser.askcolor(title="Pick a color")
+    if color[1]:
+        messagebox.showinfo("Chosen Color", f"Hex code: {color[1]}")
+
+# Function to open simple text input dialog
+def ask_name():
+    name = simpledialog.askstring("Input", "Enter your name:")
+    if name:
+        messagebox.showinfo("Hello", f"Hi {name}!")
+
+# Create buttons to trigger each dialog
+tk.Button(root, text="Show Info", command=show_info).pack(pady=5)
+tk.Button(root, text="Open File", command=open_file).pack(pady=5)
+tk.Button(root, text="Choose Color", command=choose_color).pack(pady=5)
+tk.Button(root, text="Ask Name", command=ask_name).pack(pady=5)
+
+root.mainloop()
+
+######## NEXT ###########
+
+
+
+
+######## NEXT ###########
+
+
+
+
+######## NEXT ###########
+
+
