@@ -317,6 +317,40 @@ root.mainloop()
 
 ######## NEXT ###########
 
+import tkinter as tk
+from tkinter import ttk, messagebox
+
+# Create main window
+root = tk.Tk()
+root.title("Simple ttk Example")
+root.geometry("300x200")
+
+# Function to handle button click (using command=)
+def show_message():
+    name = entry.get()  # get text from Entry
+    messagebox.showinfo("Hello", f"Welcome, {name}!")  # show info dialog
+
+# Label widget (ttk version)
+lbl = ttk.Label(root, text="Enter your name:")
+lbl.pack(pady=10)
+
+# Entry widget to take input
+entry = ttk.Entry(root)
+entry.pack(pady=5)
+
+# Button widget to show message
+btn = ttk.Button(root, text="Say Hello", command=show_message)
+btn.pack(pady=10)
+
+# Function to handle mouse click event (using bind)
+def on_click(event):
+    messagebox.showinfo("Clicked", "You clicked inside the window!")
+
+# Bind left mouse button click to the window
+root.bind("<Button-1>", on_click)
+
+# Run the Tkinter main loop
+root.mainloop()
 
 
 
