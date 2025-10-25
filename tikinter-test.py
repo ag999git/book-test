@@ -280,9 +280,40 @@ tk.Button(root, text="Ask Name", command=ask_name).pack(pady=5)
 root.mainloop()
 
 ######## NEXT ###########
+import tkinter as tk
 
+# Create main window
+root = tk.Tk()
+root.title("after() and after_cancel() Example")
+root.geometry("300x200")
 
+# Label to display messages
+lbl = tk.Label(root, text="Click 'Start Timer' to begin", font=("Arial", 12))
+lbl.pack(pady=20)
 
+# Function to update label text after delay
+def update_label():
+    lbl.config(text="Updated after 2 seconds!")
+
+# Function to start timer
+def start_timer():
+    global task_id  # make variable accessible outside function
+    lbl.config(text="Timer started... will update soon")
+    # Schedule update_label() to run after 2000 milliseconds (2 seconds)
+    task_id = root.after(2000, update_label)
+
+# Function to cancel scheduled task
+def cancel_timer():
+    if 'task_id' in globals():  # check if task was started
+        root.after_cancel(task_id)
+        lbl.config(text="Update cancelled!")
+
+# Buttons for starting and cancelling timer
+tk.Button(root, text="Start Timer", command=start_timer).pack(pady=5)
+tk.Button(root, text="Cancel Timer", command=cancel_timer).pack(pady=5)
+
+# Run Tkinter main loop
+root.mainloop()
 
 ######## NEXT ###########
 
