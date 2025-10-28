@@ -1,5 +1,28 @@
-################ NEW ####################
+################ NEW #### EXAMPLE CODE SHOWING A PYTHON FUNCTIONS AS SEPERATION OF CONCERN
 
+# Function 1: Get user input (responsible only for input)
+def get_numbers():
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    return a, b
+
+# Function 2: Perform addition (responsible only for calculation)
+def add_numbers(a, b):
+    return a + b
+
+# Function 3: Display the result (responsible only for output)
+def display_result(result):
+    print(f"The sum is: {result}")
+
+# Main function to coordinate all parts
+def main():
+    x, y = get_numbers()      # Input concern
+    total = add_numbers(x, y) # Processing concern
+    display_result(total)     # Output concern
+
+# Run the program
+if __name__ == "__main__":
+    main()
 
 
 
