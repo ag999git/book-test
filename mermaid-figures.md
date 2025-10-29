@@ -114,7 +114,28 @@ graph TD
 
 ```
 
-Creational Design Patterns
+Creational Design Patterns 1
+
+```mermaid
+mindmap
+  root((Creational Design Patterns))
+    description(Deals with object creation mechanisms)
+    Factory Method
+      note(Lets subclasses decide which class to instantiate)
+    Abstract Factory
+      note(Creates families of related objects)
+    Builder
+      note(Constructs complex objects step by step)
+    Prototype
+      note(Creates new objects by cloning existing ones)
+    Singleton
+      note(Ensures only one instance of a class)
+    Object Pool
+      note(Reuses limited resources instead of recreating)
+
+
+```
+Creational Design Patterns 2
 
 ```mermaid
 mindmap
@@ -136,8 +157,7 @@ mindmap
 
 ```
 
-
-Structural Design Patterns
+Structural Design Patterns 1
 
 ```mermaid
 mindmap
@@ -158,7 +178,55 @@ mindmap
 
 
 ```
-Behavioral Design Patterns
+Structural Design Patterns 2
+
+```mermaid
+mindmap
+  root((Structural Design Patterns))
+    description(Simplifies relationships between classes and objects)
+    Adapter
+      note(Converts one interface into another)
+    Decorator
+      note(Adds new behavior dynamically)
+    Bridge
+      note(Separates abstraction from implementation)
+    Facade
+      note(Provides simple interface to complex system)
+    Flyweight
+      note(Shares common data to save memory)
+    Proxy
+      note(Controls access to another object)
+
+
+```
+Behavioral Design Patterns 1
+
+```mermaid
+mindmap
+  root((Behavioral Design Patterns))
+    description(Manages communication and control flow among objects)
+    Chain of Responsibility
+      note(Passes requests along handlers)
+    Command
+      note(Encapsulates requests as objects)
+    Observer
+      note(Notifies dependents of state changes)
+    State
+      note(Changes behavior when internal state changes)
+    Interpreter
+      note(Defines grammar and interprets sentences)
+    Strategy
+      note(Selects algorithm at runtime)
+    Memento
+      note(Saves and restores object state)
+    Iterator
+      note(Sequentially accesses collection elements)
+    Template Method
+      note(Defines algorithm skeleton, defers details)
+
+
+```
+Behavioral Design Patterns 2
 
 ```mermaid
 mindmap
@@ -186,8 +254,24 @@ mindmap
 
 ```
 
+Architectural Patterns 1
 
-Architectural Patterns
+```mermaid
+mindmap
+  root((Architectural Patterns))
+    description(High-level templates for structuring software systems)
+    Model-View-Controller (MVC)
+      note(Separates data, logic, and presentation)
+    Microservices
+      note(Independent, loosely coupled services)
+    Serverless
+      note(Executes code in cloud-managed environments)
+    Event Sourcing
+      note(Stores state changes as events)
+
+
+```
+Architectural Patterns 2
 
 ```mermaid
 mindmap
@@ -206,7 +290,8 @@ mindmap
 ```
 
 
-Concurrency & Asynchronous Patterns
+
+Concurrency & Asynchronous Patterns 1
 
 ```mermaid
 mindmap
@@ -223,6 +308,25 @@ mindmap
 
 
 ```
+
+Concurrency & Asynchronous Patterns 2
+
+```mermaid
+mindmap
+  root((Concurrency & Asynchronous Patterns))
+    description(Manages multiple operations simultaneously)
+    Thread Pool
+      note(Reuses threads for multiple tasks)
+    Worker Model
+      note(Producers send tasks to worker consumers)
+    Future & Promise
+      note(Represents results of async operations)
+    Reactive Observer
+      note(Handles continuous data streams asynchronously)
+
+
+```
+
 Performance Patterns
 
 ```mermaid
