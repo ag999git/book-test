@@ -1,82 +1,11 @@
 
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-
-Creational design pattern
-
-```mermaid
-mindmap
-  root((Creational Design Patterns))
-    Singleton
-      : Ensure only one instance of a class exists.
-    Factory
-      : Create objects without specifying exact class.
-    Abstract Factory
-      : Create families of related objects.
-    Builder
-      : Construct complex objects step by step.
-    Prototype
-      : Clone existing objects instead of creating new ones.
-```
-
-Structural Design Patterns (Class & Object Composition)
 
 
-```mermaid
-mindmap
-  root((Structural Design Patterns))
-    Adapter
-      : Converts one interface into another.
-    Bridge
-      : Decouples abstraction from implementation.
-    Composite
-      : Treat individual and composite objects uniformly.
-    Decorator
-      : Dynamically add behavior to objects.
-    Facade
-      : Provides a simplified interface to a subsystem.
-    Flyweight
-      : Shares objects to support large numbers efficiently.
-    Proxy
-      : Controls access to another object.
 
 
-```
-
-Behavioral Design Patterns (Object Interaction)
 
 
-```mermaid
-mindmap
-  root((Behavioral Design Patterns))
-    Chain of Responsibility
-      : Passes requests along a chain of handlers.
-    Command
-      : Encapsulates a request as an object.
-    Iterator
-      : Sequentially access elements in a collection.
-    Mediator
-      : Simplifies communication between classes.
-    Memento
-      : Captures and restores object’s internal state.
-    Observer
-      : Notifies dependents of state changes.
-    State
-      : Changes behavior when internal state changes.
-    Strategy
-      : Selects algorithm behavior at runtime.
-    Template Method
-      : Defines algorithm skeleton, lets subclasses override steps.
-    Visitor
-      : Separates algorithms from object structure.
 
-
-```
 
 Separation of Concerns Hierarchy in Python
 
