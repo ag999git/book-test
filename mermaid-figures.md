@@ -1,13 +1,4 @@
-
-
-
-
-
-
-
-
-
-Separation of Concerns Hierarchy in Python
+### Separation of Concerns Hierarchy in Python
 
 ```mermaid
 graph TD
@@ -43,7 +34,7 @@ graph TD
 
 ```
 
-Creational Design Patterns 1
+### Creational Design Patterns 1
 
 ```mermaid
 mindmap
@@ -64,7 +55,7 @@ mindmap
 
 
 ```
-Creational Design Patterns 2
+### Creational Design Patterns 2
 
 ```mermaid
 mindmap
@@ -86,7 +77,7 @@ mindmap
 
 ```
 
-Structural Design Patterns 1
+### Structural Design Patterns 1
 
 ```mermaid
 mindmap
@@ -107,7 +98,7 @@ mindmap
 
 
 ```
-Structural Design Patterns 2
+### Structural Design Patterns 2
 
 ```mermaid
 mindmap
@@ -128,7 +119,7 @@ mindmap
 
 
 ```
-Behavioral Design Patterns 1
+### Behavioral Design Patterns 1
 
 ```mermaid
 mindmap
@@ -155,7 +146,7 @@ mindmap
 
 
 ```
-Behavioral Design Patterns 2
+### Behavioral Design Patterns 2
 
 ```mermaid
 mindmap
@@ -183,7 +174,7 @@ mindmap
 
 ```
 
-Architectural Patterns 1
+### Architectural Patterns 1
 
 ```mermaid
 mindmap
@@ -200,7 +191,7 @@ mindmap
 
 
 ```
-Architectural Patterns 2
+### Architectural Patterns 2
 
 ```mermaid
 mindmap
@@ -220,7 +211,7 @@ mindmap
 
 
 
-Concurrency & Asynchronous Patterns 1
+### Concurrency & Asynchronous Patterns 1
 
 ```mermaid
 mindmap
@@ -238,7 +229,7 @@ mindmap
 
 ```
 
-Concurrency & Asynchronous Patterns 2
+### Concurrency & Asynchronous Patterns 2
 
 ```mermaid
 mindmap
@@ -256,7 +247,7 @@ mindmap
 
 ```
 
-Performance Patterns
+### Performance Patterns
 
 ```mermaid
 mindmap
@@ -271,7 +262,7 @@ mindmap
 
 
 ```
-Distributed Systems Patterns
+### Distributed Systems Patterns
 
 ```mermaid
 mindmap
@@ -286,7 +277,7 @@ mindmap
 
 
 ```
-Testing Patterns
+### Testing Patterns
 
 ```mermaid
 mindmap
