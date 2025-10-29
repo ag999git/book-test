@@ -136,19 +136,74 @@ mindmap
 ```
 
 
+Structural Design Patterns
+
 ```mermaid
+mindmap
+  root((Structural Design Patterns))
+    description(Simplifies relationships between classes and objects)
+    Adapter
+      note(Converts one interface into another)
+    Decorator
+      note(Adds new behavior dynamically)
+    Bridge
+      note(Separates abstraction from implementation)
+    Facade
+      note(Provides simple interface to complex system)
+    Flyweight
+      note(Shares common data to save memory)
+    Proxy
+      note(Controls access to another object)
+
+
+```
+Behavioral Design Patterns
+
+```mermaid
+mindmap
+  root((Behavioral Design Patterns))
+    description(Manages communication and control flow among objects)
+    Chain of Responsibility
+      note(Passes requests along handlers)
+    Command
+      note(Encapsulates requests as objects)
+    Observer
+      note(Notifies dependents of state changes)
+    State
+      note(Changes behavior when internal state changes)
+    Interpreter
+      note(Defines grammar and interprets sentences)
+    Strategy
+      note(Selects algorithm at runtime)
+    Memento
+      note(Saves and restores object state)
+    Iterator
+      note(Sequentially accesses collection elements)
+    Template Method
+      note(Defines algorithm skeleton, defers details)
 
 
 ```
 
 
+Architectural Patterns
+
 ```mermaid
+mindmap
+  root((Architectural Patterns))
+    description(High-level templates for structuring software systems)
+    Model-View-Controller (MVC)
+      note(Separates data, logic, and presentation)
+    Microservices
+      note(Independent, loosely coupled services)
+    Serverless
+      note(Executes code in cloud-managed environments)
+    Event Sourcing
+      note(Stores state changes as events)
 
 
 ```
 
 
-```mermaid
+Concurrency & Asynchronous Patterns
 
-
-```
