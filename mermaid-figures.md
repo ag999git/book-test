@@ -1,3 +1,29 @@
+### DRY Principle
+```mermaid
+mindmap
+  root((DRY - Don't Repeat Yourself))
+    - Single source of truth
+    - Avoid duplicate code & logic
+    - Use functions, classes, modules
+    - Easier maintenance & fewer bugs
+```
+
+### Zen of Python
+```mermaid
+mindmap
+The Zen of Python (PEP 20)
+  - Beautiful > Ugly
+  - Explicit > Implicit
+  - Simple > Complex
+  - Complex > Complicated
+  - Readability counts
+  - One obvious way to do it
+  - Now > Never
+```
+
+
+
+
 ### Separation of Concerns Hierarchy in Python
 
 ```mermaid
