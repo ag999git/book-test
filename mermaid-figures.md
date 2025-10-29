@@ -1,3 +1,4 @@
+
 ```mermaid
 graph TD;
     A-->B;
@@ -207,3 +208,67 @@ mindmap
 
 Concurrency & Asynchronous Patterns
 
+```mermaid
+mindmap
+  root((Concurrency & Asynchronous Patterns))
+    description(Manages multiple operations simultaneously)
+    Thread Pool
+      note(Reuses threads for multiple tasks)
+    Worker Model
+      note(Producers send tasks to worker consumers)
+    Future & Promise
+      note(Represents results of async operations)
+    Reactive Observer
+      note(Handles continuous data streams asynchronously)
+
+
+```
+Performance Patterns
+
+```mermaid
+mindmap
+  root((Performance Patterns))
+    description(Improves speed, efficiency, and memory use)
+    Cache-Aside
+      note(Loads and stores data in cache on demand)
+    Memoization
+      note(Caches function results for reuse)
+    Lazy Loading
+      note(Delays initialization until needed)
+
+
+```
+Distributed Systems Patterns
+
+```mermaid
+mindmap
+  root((Distributed Systems Patterns))
+    description(Makes distributed systems reliable and scalable)
+    Throttling
+      note(Limits requests to prevent overload)
+    Retry
+      note(Automatically retries failed operations)
+    Circuit Breaker
+      note(Stops repeated failures to protect system)
+
+
+```
+Testing Patterns
+
+```mermaid
+mindmap
+  root((Testing Patterns))
+    description(Simplifies and isolates testing)
+    Mock Object
+      note(Simulates real objects during tests)
+    Dependency Injection
+      note(Provides dependencies externally for flexibility)
+
+
+```
+
+
+```mermaid
+
+
+```
