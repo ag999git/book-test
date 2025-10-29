@@ -11,7 +11,7 @@ mindmap
 ### Zen of Python
 ```mermaid
 mindmap
-The Zen of Python (PEP 20)
+(The Zen of Python PEP 20)
   - Beautiful > Ugly
   - Explicit > Implicit
   - Simple > Complex
@@ -20,18 +20,7 @@ The Zen of Python (PEP 20)
   - One obvious way to do it
   - Now > Never
 ```
-### Zen of Python
-```mermaid
-mindmap
-  ((The Zen of Python PEP 20))
-  - Beautiful > Ugly
-  - Explicit > Implicit
-  - Simple > Complex
-  - Complex > Complicated
-  - Readability counts
-  - One obvious way to do it
-  - Now > Never
-```
+
 
 
 
