@@ -21,7 +21,33 @@ mindmap
   - Now > Never
 ```
 
+### KISS (Keep It Simple, Stupid)
+```mermaid
+mindmap
+(KISS Keep It Simple, Stupid)
+  - Prefer simplicity
+  - Avoid over-engineering
+  - Don't optimize too early
 
+```
+
+### XXX
+```mermaid
+mindmap
+
+```
+
+### XXX
+```mermaid
+mindmap
+
+```
+
+### XXX
+```mermaid
+mindmap
+
+```
 
 
 ### Separation of Concerns Hierarchy in Python
