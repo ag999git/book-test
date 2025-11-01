@@ -343,8 +343,38 @@ mindmap
 
 ```
 
-
+### Dependency Inversion Principle (Animal World Example)
 ```mermaid
+classDiagram
+    direction LR
+
+    class MovementBehavior {
+        <<interface>>
+        +move()
+    }
+
+    class Bird {
+        +move()
+    }
+
+    class Fish {
+        +move()
+    }
+
+    class Snake {
+        +move()
+    }
+
+    class AnimalTrainer {
+        -animal : MovementBehavior
+        +make_it_move()
+    }
+
+    %% Relationships
+    MovementBehavior <|.. Bird
+    MovementBehavior <|.. Fish
+    MovementBehavior <|.. Snake
+    AnimalTrainer --> MovementBehavior : depends on
 
 
 ```
