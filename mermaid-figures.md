@@ -344,6 +344,7 @@ mindmap
 ```
 
 ### Dependency Inversion Principle (Animal World Example)
+
 ```mermaid
 classDiagram
     direction LR
