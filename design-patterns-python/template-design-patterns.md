@@ -285,3 +285,33 @@ self.load_data()
 | Inheritance | Subclasses reuse methods from the parent (process, show_summary) |
 | Polymorphism | self.load_data() calls the correct version based on the actual class (CSV/Excel) |
 | pandas | Used here to load and display tabular data |
+
+
+### The above script can be shown as a class diagram as follows:-
+
+```mermaid
+classDiagram
+    class DataProcessor {
+        +process()
+        +show_summary(data)
+        <<abstract>>
+        #load_data()
+    }
+
+    class CSVProcessor {
+        +load_data()
+        +__init__(url)
+    }
+
+    class ExcelProcessor {
+        +load_data()
+        +__init__(url)
+    }
+
+    DataProcessor <|-- CSVProcessor
+    DataProcessor <|-- ExcelProcessor
+
+```
+
+
+
