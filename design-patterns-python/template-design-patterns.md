@@ -66,9 +66,9 @@ if __name__ == "__main__":
 
 
 ```
-EXPLANATION
+### EXPLANATION
 
-**Define the abstract base class**
+#### **Define the abstract base class**
 
 class DataProcessor(ABC):    """Defines the template for data loading and display."""
 
@@ -78,7 +78,7 @@ class DataProcessor(ABC):    """Defines the template for data loading and dis
 
 ·       This class defines a **template** — a fixed _workflow_ that subclasses will follow.
 
-**The** **process()** **method (Template Method)**
+#### **The** **process()** **method (Template Method)**
 
 ```python
 def process(self):    """Template method — defines the overall workflow."""    print(f"1=== {self.\_\_class\_\_.\_\_name\_\_} Workflow Start ===")  
@@ -98,7 +98,7 @@ def process(self):    """Template method — defines the overall workflow."""
     That’s why it prints which subclass is running the workflow.
 *   This method is **inherited** by all subclasses — it is the same for both CSV and Excel.
 
-**The abstract method**
+#### **The abstract method**
 ```python
 @abstractmethod  
 def load_data(self):    """Abstract method — subclasses define how to load data."""    pass
@@ -109,7 +109,7 @@ def load_data(self):    """Abstract method — subclasses define how to load 
 
 _Think of this as a “placeholder” — the parent class says “I don’t know how you’ll load the data; you decide.”_
 
-**The shared method (common to all subclasses)**
+#### **The shared method (common to all subclasses)**
 
 ```python
 def show_summary(self, data):    """Common method — same for all subclasses."""    print("Data loaded successfully!")  
@@ -121,7 +121,7 @@ def show_summary(self, data):    """Common method — same for all subclasses
 *   data.head() is a pandas function that shows the first 5 rows of a DataFrame.
 *   Same for both CSV and Excel processors — so no need to redefine it.
 
-**Subclass 1 — CSVProcessor**
+#### **Subclass 1 — CSVProcessor**
 
 ```python
 class CSVProcessor(DataProcessor):    def __init__(self, url):  
@@ -136,7 +136,7 @@ class CSVProcessor(DataProcessor):    def __init__(self, url):
 
 *   It **inherits** the process() and show\_summary() methods automatically from the parent.
 
-**Subclass 2 — ExcelProcessor**
+#### **Subclass 2 — ExcelProcessor**
 ```python
 class ExcelProcessor(DataProcessor):    def __init__(self, url):  
         self.url = url    def load\_data(self):  
@@ -145,7 +145,7 @@ class ExcelProcessor(DataProcessor):    def __init__(self, url):
 *   Same pattern as CSVProcessor, but this one loads **Excel files**.
 *   Uses pandas.read\_excel() instead of read\_csv().
 
-**The Client Code (main program)**
+#### **The Client Code (main program)**
 ```python
 if __name__ == "__main__":  
     print("=== Template Method Pattern Demo (pandas) ===")
@@ -153,7 +153,7 @@ if __name__ == "__main__":
 *   This block runs **only** when the script is executed directly (not when imported).
 *   It’s the **entry point** of the program.
 
-**Define dataset URLs**
+#### **Define dataset URLs**
 ```python
 csv_url = "https://raw.githubusercontent.com/ag999git/data-sets/main/popular\_python\_libraries\_AI\_NLP\_ML.csv"
 excel_url = "https://raw.githubusercontent.com/ag999git/data-sets/main/Popular-python-libraries.xlsx"
@@ -161,7 +161,7 @@ excel_url = "https://raw.githubusercontent.com/ag999git/data-sets/main/Popular-p
 *   These are **GitHub raw links** to real datasets.
 *   They are passed to the processors instead of local files.
 
-**Create objects and run workflows**
+#### **Create objects and run workflows**
 ```python
 # Process CSV  
 csv_processor = CSVProcessor(csv\_url)  
@@ -174,7 +174,7 @@ excel_processor.process()
 *   Creates an object of each subclass and passes the file URL.
 *   Calls .process() — the template method in the parent class.
 
-**What happens step-by-step for** **CSVProcessor****:**
+#### **What happens step-by-step for** **CSVProcessor****:**
 
 1.  csv\_processor.process() runs DataProcessor.process()
 2.  Inside that method:
@@ -187,9 +187,9 @@ excel_processor.process()
 The same happens for ExcelProcessor, except it loads Excel data.
 
 ***
-Some questions on above script
+### Some questions on above script
 
-**Q1. Why is there no \_\_init\_\_() method in DataProcessor(ABC)?**
+#### **Q1. Why is there no \_\_init\_\_() method in DataProcessor(ABC)?**
 
 ***Short Answer:***
 
@@ -201,7 +201,7 @@ Detailed Explanation:
 *   Its purpose is to say:- “Any subclass must define load\_data() and can reuse show\_summary() and process().”
 *   It doesn’t need instance variables like self.url because those belong to the specific data type (CSV or Excel). Those subclasses handle their own initialization.
 
-**Q2. Does CSVProcessor(DataProcessor) call the superclass methods even though there’s no super()?**
+#### **Q2. Does CSVProcessor(DataProcessor) call the superclass methods even though there’s no super()?**
 
 **Short Answer:**
 
@@ -230,7 +230,7 @@ self.load_data()
 
 *   Since CSVProcessor **does override load\_data()**, that subclass version is called at runtime due to **polymorphism**.
 
-**Step-by-step flow:**
+### **Step-by-step flow:**
 
 1.  csv\_processor.process() → found in superclass DataProcessor.
 2.  Inside process(), it calls self.load\_data().
