@@ -238,4 +238,11 @@ self.load_data()
 4.  Finds it → executes CSVProcessor.load\_data().
 5.  When done, control returns to process() in the superclass.
 ***
-
+| Concept | Explanation |
+| --- | --- |
+| Abstract class (ABC) | Used to define a base structure that cannot be instantiated |
+| Abstract method | A placeholder that must be implemented by subclasses |
+| Template Method Pattern | Parent defines the skeleton of a process; subclasses fill in specific steps |
+| Inheritance | Subclasses reuse methods from the parent (process, show_summary) |
+| Polymorphism | self.load_data() calls the correct version based on the actual class (CSV/Excel) |
+| pandas | Used here to load and display tabular data |
