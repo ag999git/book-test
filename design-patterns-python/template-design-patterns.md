@@ -174,17 +174,18 @@ def load_data(self):    #Abstract method — subclasses define how to load da
 
 _Think of this as a “placeholder” — the parent class says “I don’t know how you’ll load the data; you decide.”_
 
-##### **The shared method (common to all subclasses)**
+##### **1.(c) `show_summary()` is a shared method (common to all subclasses)**
 
 ```python
 def show_summary(self, data):    """Common method — same for all subclasses."""    print("Data loaded successfully!")  
     print("Showing first few rows:\n")  
     print(data.head())  # Display top 5 rows
 ```
-*   This is a **normal method** that all subclasses inherit.
+*   This is a **normal method** that all subclasses inherit. It is ***not*** an abstract method. 
+*   So it is **only** implemented in the base (parent) class and not in the inherited (child/ subclass) class.
 *   It prints a short summary of the loaded data.
 *   `data.head()` is a pandas function that shows the first 5 rows of a DataFrame.
-*   Same for both CSV and Excel processors — so no need to redefine it.
+*   It is the same for both CSV and Excel processors — so no need to redefine it in the derived (child/ subclass) classes.
 
 #### **2. Subclass 1 — `CSVProcessor`**
 
