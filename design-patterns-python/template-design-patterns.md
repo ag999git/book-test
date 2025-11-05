@@ -318,8 +318,108 @@ self.load_data()
 | Polymorphism | self.load_data() calls the correct version based on the actual class (CSV/Excel) |
 | pandas | Used here to load and display tabular data |
 
+***
+### Some more questions on the example script given above:-
+**What is the main purpose of this script?**
 
+Answer:- The script demonstrates the Template Method Design Pattern in Python using the `abc` (Abstract Base Class) module and pandas. It shows how a base class defines a workflow (the template), while subclasses implement specific steps — in this case, loading data from different sources (CSV and Excel).
 
+**What is the Template Method Pattern?**
 
+Answer:- It’s a behavioral design pattern where: A base (abstract) class defines the skeleton of an algorithm in a method (the “template method”). Subclasses override specific steps without changing the overall structure. Here, the template method is `process()` in `DataProcessor`.
+
+**Which class defines the “template” in this example?**
+
+Answer:- The DataProcessor abstract class defines the template method `process(`), which specifies the fixed workflow:
+
+·       Load the data (`self.load_data()`)
+
+·       Show a summary (`self.show_summary(data)`)
+
+**What does the `@abstractmethod` decorator do in Python?**
+
+Answer:- The `@abstractmethod` decorator marks a method that must be implemented by any subclass. In this case, `load_data()` in DataProcessor is abstract — so DataProcessor cannot be instantiated directly.
+
+**Why doesn’t DataProcessor have an `__init__()` method?**
+
+Answer:- Because it doesn’t store or manage any specific data itself — it only defines the common structure for all processors. Initialization is specific to the subclasses (`CSVProcessor`, `ExcelProcessor`), which each need a URL.
+
+6\. What does the `process(`) method do?
+
+Answer:- It defines the overall data processing workflow (the template):
+
+·       It Prints a start message.
+
+·       It Calls the subclass’s `load_data()` method.
+
+·       It Calls the shared `show_summary()` method.
+
+·       It Prints a completion message.
+
+·       The subclasses only change the “load data” step — everything else stays the same.
+
+**How does `CSVProcessor` know about process() and `show_summary()` ?**
+
+Answer:- `CSVProcessor` inherits from `DataProcessor`. Even though it doesn’t explicitly call `super()`, Python’s inheritance mechanism automatically makes process() and show\_summary() available to it.
+
+**What does `self.__class__.__name__` do inside the `process()` method?**
+
+Answer:- It dynamically retrieves the name of the subclass (`CSVProcessor` or `ExcelProcessor`) at runtime — making the printed output specific to each subclass.
+
+**What does the `pd.read_csv(self.url)` and `pd.read_excel(self.url)` do?**
+
+Answer:- These are Pandas functions that load data directly from an online URL or local file into a DataFrame — a table-like data structure in pandas.
+
+·       `pd.read_csv()` is used for CSV (comma-separated) files.
+
+·       `pd.read_excel()` is used for Excel .xlsx files.
+
+**What is the purpose of `data.head()` in `show_summary()`?**
+
+Answer:- `data.head()` shows the first five rows of the DataFrame. It’s used here to confirm that the data was loaded successfully and to give a quick preview of the dataset.
+
+**Why do we create two separate subclasses — `CSVProcessor` and `ExcelProcessor`?**
+
+Answer:- Because each file type requires a different way to load data — CSV uses `read_csv()`, Excel uses `read_excel()`. By separating them, we achieve high cohesion (each class has one responsibility) and loose coupling (each class can change independently).
+
+**Can we add more file types (like JSON or SQL)?**
+
+Answer:- Yes — that’s the power of this pattern!. You can simply create a new subclass, say `JSONProcessor`, that implements `load_data()` using `pd.read_json()`. No changes are needed in DataProcessor — the structure remains the same.
+
+**Why is this pattern better than using many if/else statements for file types?**
+
+Answer:- Because the Template Method Pattern promotes extensibility and clean code. Adding a new data type doesn’t require modifying existing code — you just extend the system with a new subclass.
+
+**Is DataProcessor an example of an interface or an abstract class?**
+
+Answer:- It acts like both:
+
+·       Like an interface, it enforces that subclasses must implement `load_data()`.
+
+·       Like an abstract class, it also provides shared functionality (`process()` and `show_summary()`).
+
+**What OOP principles does this code demonstrate?**
+
+Answer:
+
+·       Abstraction — defining general structure in DataProcessor.
+
+·       Inheritance — sharing common behavior in subclasses.
+
+·       Polymorphism — subclasses provide different implementations of load\_data().
+
+·       Encapsulation — data loading logic is hidden inside each subclass.
+
+** The concepts of the script given above can be summarized in form of a table as given below:-
+
+  
+
+| Concept | Example in Code | Purpose |
+| --- | --- | --- |
+| Abstract Class | `class DataProcessor(ABC)` | Defines the template and enforces rules |
+| Abstract Method | `load_data()` | Forces subclasses to implement |
+| Concrete Class | `CSVProcessor`, `ExcelProcessor` | Implements specific behavior |
+| Template Method | `process()` | Defines fixed workflow steps |
+| Polymorphism | Different `load_data()` methods | Allows flexibility per subclass |
 
 
