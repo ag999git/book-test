@@ -1,7 +1,7 @@
 
-# **Template Design Pattern**
+## **Template Design Pattern**
 
-
+### Python example script which shows the use of Template design pattern
 
 
 ```python
