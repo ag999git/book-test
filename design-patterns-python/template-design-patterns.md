@@ -66,6 +66,41 @@ if __name__ == "__main__":
 
 
 ```
+### The output of the above script is as follows:-
+
+```python
+=== Template Method Pattern Demo (pandas) ===
+1=== CSVProcessor Workflow Start ===
+Loading CSV data from https://raw.githubusercontent.com/ag999git/data-sets/main/popular_python_libraries_AI_NLP_ML.csv
+Data loaded successfully!
+Showing first few rows:
+
+  Name of Library  ...                                   GitHub URL
+0            NLTK  ...                 https://github.com/nltk/nltk
+1           spaCy  ...           https://github.com/explosion/spaCy
+2          Gensim  ...  https://github.com/RaRe-Technologies/gensim
+3    Transformers  ...  https://github.com/huggingface/transformers
+4        TextBlob  ...           https://github.com/sloria/TextBlob
+
+[5 rows x 8 columns]
+=== CSVProcessor Workflow Complete ===
+
+1=== ExcelProcessor Workflow Start ===
+Loading Excel data from https://raw.githubusercontent.com/ag999git/data-sets/main/Popular-python-libraries.xlsx
+Data loaded successfully!
+Showing first few rows:
+
+  Name of Library  ...                                    GitHub URL
+0           NumPy  ...                https://github.com/numpy/numpy
+1          Pandas  ...          https://github.com/pandas-dev/pandas
+2      Matplotlib  ...      https://github.com/matplotlib/matplotlib
+3         Seaborn  ...            https://github.com/mwaskom/seaborn
+4    Scikit-learn  ...  https://github.com/scikit-learn/scikit-learn
+
+[5 rows x 7 columns]
+=== ExcelProcessor Workflow Complete ===
+```
+
 ### EXPLANATION
 
 #### **Define the abstract base class**
