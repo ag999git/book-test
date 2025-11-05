@@ -209,7 +209,7 @@ excel_processor.process()
 *   Creates an object of each subclass and passes the file URL.
 *   Calls .process() — the template method in the parent class.
 
-#### **What happens step-by-step for** **CSVProcessor****:**
+#### What happens step-by-step for **CSVProcessor** 
 
 1.  csv\_processor.process() runs DataProcessor.process()
 2.  Inside that method:
