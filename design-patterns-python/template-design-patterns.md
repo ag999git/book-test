@@ -420,6 +420,6 @@ Answer:
 | Abstract Method | `load_data()` | Forces subclasses to implement |
 | Concrete Class | `CSVProcessor`, `ExcelProcessor` | Implements specific behavior |
 | Template Method | `process()` | Defines fixed workflow steps |
-| Polymorphism | Different `load_data()` methods | Allows flexibility per subclass |
+| Polymorphism | Different `load_data()` methods | Allows flexibility per subclass. The subclasses can use this method from superclass and dont need to implement it. |
 
 
