@@ -136,7 +136,8 @@ def process(self):    """Template method — defines the overall workflow."""
 #### **The abstract method**
 ```python
 @abstractmethod  
-def load_data(self):    """Abstract method — subclasses define how to load data."""    pass
+def load_data(self):    #Abstract method — subclasses define how to load data.
+    pass
 ```
 *   This is an **abstract method** — it has no body (pass = do nothing).
 *   It forces every subclass (child class) to implement its **own version** of load\_data().  
