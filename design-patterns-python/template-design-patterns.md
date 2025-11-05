@@ -344,7 +344,7 @@ Answer:- The `@abstractmethod` decorator marks a method that must be implemented
 
 Answer:- Because it doesn’t store or manage any specific data itself — it only defines the common structure for all processors. Initialization is specific to the subclasses (`CSVProcessor`, `ExcelProcessor`), which each need a URL.
 
-6\. What does the `process(`) method do?
+**What does the `process(`) method do?**
 
 Answer:- It defines the overall data processing workflow (the template):
 
