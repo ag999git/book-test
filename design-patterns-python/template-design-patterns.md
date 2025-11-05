@@ -101,9 +101,37 @@ Showing first few rows:
 === ExcelProcessor Workflow Complete ===
 ```
 
+### The above script can be shown as a class diagram as follows:-
+
+```mermaid
+classDiagram
+    class DataProcessor {
+        +process()
+        +show_summary(data)
+        <<abstract>>
+        #load_data()
+    }
+
+    class CSVProcessor {
+        +load_data()
+        +__init__(url)
+    }
+
+    class ExcelProcessor {
+        +load_data()
+        +__init__(url)
+    }
+
+    DataProcessor <|-- CSVProcessor
+    DataProcessor <|-- ExcelProcessor
+
+```
+
+
+
 ### EXPLANATION
 
-#### **Define the abstract base class**
+#### **1. Define the abstract base class**
 
 class `DataProcessor(ABC)`:    """Defines the template for data loading and display."""
 
@@ -113,7 +141,7 @@ class `DataProcessor(ABC)`:    """Defines the template for data loading and d
 
 ·       This class defines a **template** — a fixed _workflow_ that subclasses will follow.
 
-#### **The `process()`  method (Template Method)**
+##### **1.(a) The `process()`  method (Template Method) of the abstract base class `DataProcessor`**
 
 ```python
 def process(self):    """Template method — defines the overall workflow."""    print(f"1=== {self.__class__.__name__} Workflow Start ===")  
@@ -121,7 +149,8 @@ def process(self):    """Template method — defines the overall workflow."""
     self.show_summary(data)  
     print(f"=== {self.__class__.__name__} Workflow Complete ===\n")
 ```
-*   This is the **template method** that defines the **fixed sequence of steps** every data processor must follow:
+
+This is the **template method** that defines the **fixed sequence of steps** every data processor must follow:
 
 1.  Start message (Workflow Start)
 2.  Call `load_data()` → load the dataset
@@ -133,7 +162,7 @@ def process(self):    """Template method — defines the overall workflow."""
     That’s why it prints which subclass is running the workflow.
 *   This method is **inherited** by all subclasses — it is the same for both CSV and Excel.
 
-#### **The abstract method**
+##### **1.(b) The abstract method of the abstract base class `DataProcessor`**
 ```python
 @abstractmethod  
 def load_data(self):    #Abstract method — subclasses define how to load data.
@@ -145,7 +174,7 @@ def load_data(self):    #Abstract method — subclasses define how to load da
 
 _Think of this as a “placeholder” — the parent class says “I don’t know how you’ll load the data; you decide.”_
 
-#### **The shared method (common to all subclasses)**
+##### **The shared method (common to all subclasses)**
 
 ```python
 def show_summary(self, data):    """Common method — same for all subclasses."""    print("Data loaded successfully!")  
@@ -157,7 +186,7 @@ def show_summary(self, data):    """Common method — same for all subclasses
 *   `data.head()` is a pandas function that shows the first 5 rows of a DataFrame.
 *   Same for both CSV and Excel processors — so no need to redefine it.
 
-#### **Subclass 1 — CSVProcessor**
+#### **2. Subclass 1 — `CSVProcessor`**
 
 ```python
 class CSVProcessor(DataProcessor):    def __init__(self, url):  
@@ -172,16 +201,18 @@ class CSVProcessor(DataProcessor):    def __init__(self, url):
 
 *   It **inherits** the `process()` and `show_summary()` methods automatically from the parent.
 
-#### **Subclass 2 — ExcelProcessor**
+#### **3. Subclass 2 — `ExcelProcessor`**
+
 ```python
 class ExcelProcessor(DataProcessor):    def __init__(self, url):  
         self.url = url    def load_data(self):  
         print(f"Loading Excel data from {self.url}")        return pd.read_excel(self.url)
 ```
-*   Same pattern as `CSVProcessor`, but this one loads **Excel files**.
-*   Uses `pandas.read_excel()` instead of `read_csv()`.
+*   This class also **inherits** from DataProcessor.
+*   It has same pattern as `CSVProcessor`, but this one loads **Excel files**.
+*   It uses `pandas.read_excel()` instead of `read_csv()`.
 
-#### **The Client Code (main program)**
+#### **4. The Client Code (main program)**
 ```python
 if __name__ == "__main__":  
     print("=== Template Method Pattern Demo (pandas) ===")
@@ -189,7 +220,7 @@ if __name__ == "__main__":
 *   This block runs **only** when the script is executed directly (not when imported).
 *   It’s the **entry point** of the program.
 
-#### **Define dataset URLs**
+#### **5. Define dataset URLs**
 ```python
 csv_url = "https://raw.githubusercontent.com/ag999git/data-sets/main/popular_python_libraries_AI_NLP_ML.csv"
 excel_url = "https://raw.githubusercontent.com/ag999git/data-sets/main/Popular-python-libraries.xlsx"
@@ -200,7 +231,7 @@ excel_url = "https://raw.githubusercontent.com/ag999git/data-sets/main/Popular-p
 *   And you can download the .xlsx (Excel) data by [clicking the link here](https://raw.githubusercontent.com/ag999git/data-sets/main/Popular-python-libraries.xlsx)
 *   So, the data being used for this example is not on the local machine but rather on GitHub.
 
-#### **Create objects and run workflows**
+#### **6. Create objects and run workflows**
 ```python
 # Process CSV  
 csv_processor = CSVProcessor(csv_url)  
@@ -213,7 +244,7 @@ excel_processor.process()
 *   Creates an object of each subclass and passes the file URL.
 *   Calls `process()` — the template method in the parent class.
 
-#### What happens step-by-step for **CSVProcessor** 
+#### 7. What happens step-by-step for **CSVProcessor** 
 
 1.  `csv_processor.process()` runs `DataProcessor.process()`
 2.  Inside that method:
@@ -223,7 +254,7 @@ excel_processor.process()
 
 4.  Prints workflow start and complete messages.
 
-The same happens for ExcelProcessor, except it loads Excel data.
+The same happens for `ExcelProcessor`, except it loads Excel data.
 
 ***
 ### Some questions on above script
@@ -287,31 +318,7 @@ self.load_data()
 | pandas | Used here to load and display tabular data |
 
 
-### The above script can be shown as a class diagram as follows:-
 
-```mermaid
-classDiagram
-    class DataProcessor {
-        +process()
-        +show_summary(data)
-        <<abstract>>
-        #load_data()
-    }
-
-    class CSVProcessor {
-        +load_data()
-        +__init__(url)
-    }
-
-    class ExcelProcessor {
-        +load_data()
-        +__init__(url)
-    }
-
-    DataProcessor <|-- CSVProcessor
-    DataProcessor <|-- ExcelProcessor
-
-```
 
 
 
