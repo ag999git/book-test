@@ -2,25 +2,19 @@
 
 
 ```mermaid
-graph TD
-    A["Container<br>(list, tuple, dict, set, str)"]
-    B["Iterable<br>Implements __iter__()"]
-    C["Iterator<br>Implements __iter__() and __next__()"]
-    D["Generates / Yields Values<br>(e.g., generators, itertools.count())"]
+flowchart TD
+    A["Start"] --> B["Take a Python object my_obj"]
+    B --> C["Pass my_obj to built-in function iter(my_obj)"]
+    C --> D["Python checks if my_obj supports the Iterator Protocol"]
+    D --> E{"Is my_obj iterable?"}
+    E -- No --> F["Raise TypeError"]
+    E -- Yes --> G["Return an iterator object"]
+    G --> H["my_obj is iterable if it implements __iter__() and __next__()"]
+    F --> I["End"]
+    H --> I
 
-    A -->|"iter(container)"| B
-    B -->|"iter(iterable)"| C
-    C -->|"next(iterator)"| D
 
-    classDef cont fill:#d5f5e3,stroke:#2e7d32,stroke-width:2px,color:#000;
-    classDef iter fill:#fff9c4,stroke:#f9a825,stroke-width:2px,color:#000;
-    classDef itor fill:#bbdefb,stroke:#1565c0,stroke-width:2px,color:#000;
-    classDef gen fill:#f8bbd0,stroke:#ad1457,stroke-width:2px,color:#000;
 
-    class A cont;
-    class B iter;
-    class C itor;
-    class D gen;
 ```
 
 
