@@ -144,7 +144,8 @@ class `DataProcessor(ABC)`:    """Defines the template for data loading and d
 ##### **1.(a) The `process()`  method (Template Method) of the abstract base class `DataProcessor`**
 
 ```python
-def process(self):    """Template method — defines the overall workflow."""    print(f"1=== {self.__class__.__name__} Workflow Start ===")  
+def process(self):    """Template method — defines the overall workflow."""
+    print(f"1=== {self.__class__.__name__} Workflow Start ===")  
     data = self.load_data()  
     self.show_summary(data)  
     print(f"=== {self.__class__.__name__} Workflow Complete ===\n")
