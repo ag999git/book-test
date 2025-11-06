@@ -270,6 +270,7 @@ Because DataProcessor is an **abstract base class** — it only defines a _workf
 Detailed Explanation:
 
 *   DataProcessor defines **structure and rules**, not actual data.
+*   DataProcessor class is never instantiated (That is no object of DataProcessor class is ever created).
 *   Its purpose is to say:- “Any subclass must define `load_data()` and can reuse `show_summary()` and `process()`.”
 *   It doesn’t need instance variables like `self.url` because those belong to the specific data type (CSV or Excel). Those subclasses handle their own initialization.
 
