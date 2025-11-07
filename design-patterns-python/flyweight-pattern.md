@@ -93,6 +93,32 @@ sequenceDiagram
 
     Note over Client: Both calls used the same shared object
 
+```
+
+#### Python code diagram (with arrows showing calls like get_connection → Connection() → send() flow
+
+```mermaid
+flowchart TD
+    A["Client Code"] -->|"requests connection"| B["ConnectionPool (Flyweight Factory)"]
+
+    B -->|"checks cache"| C{"_connections cache"}
+    C -->|"miss"| D["Connection object (new Flyweight)"]
+    C -->|"hit"| D["Existing shared Connection"]
+
+    D -->|"use connection"| E["Shared state: db_name (intrinsic data)"]
+
+    A -->|"uses shared connection"| D
+
+    subgraph Note["Flyweight Pattern Summary"]
+        direction TB
+        N1["Client asks factory for an object"]
+        N2["Factory returns existing one if available"]
+        N3["Otherwise creates, caches, and returns new one"]
+        N4["Result → fewer objects, shared memory"]
+    end
+
+    Note -.-> A
+
 
 
 ```
