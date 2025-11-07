@@ -46,7 +46,7 @@ print("\nIs conn1 same as conn3?", conn1 is conn3)
 
 ```
 
-## Flowchart showing the execution of above script
+#### Flowchart showing the execution of above script
 
 ```mermaid
 
@@ -62,7 +62,40 @@ flowchart TD
 
 ```
 
+#### Sequence Diagram — Flyweight (Connection Pool)
 
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Client
+    participant Pool as ConnectionPool
+    participant Conn as Connection
+
+    Note over Client,Pool: Client requests connection to "Server-A"
+    Client->>Pool: get_connection("Server-A")
+    alt Connection not in _connections
+        Pool->>Conn: Create new Connection("Server-A")
+        Conn-->>Pool: Return new Connection instance
+        Pool->>Pool: Store instance in _connections["Server-A"]
+    else Connection already exists
+        Pool-->>Client: Return existing Connection
+    end
+    Pool-->>Client: Return Connection object
+
+    Note over Client,Conn: Client sends a message using the connection
+    Client->>Conn: send("Ping 1")
+
+    Note over Client,Pool: Later, another request for "Server-A"
+    Client->>Pool: get_connection("Server-A")
+    Pool-->>Client: Reuse same Connection instance
+
+    Client->>Conn: send("Ping 2")
+
+    Note over Client: Both calls used the same shared object
+
+
+
+```
 
 
 
