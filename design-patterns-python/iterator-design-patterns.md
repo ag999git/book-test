@@ -129,4 +129,43 @@ flowchart LR
 
 ```
 
+#### Two class design
+
+```python
+
+class MyIterable:
+    def __init__(self, end):
+        self.end = end
+
+    def __iter__(self):
+        # Return a new iterator every time
+        return MyIterator(self.end)
+
+class MyIterator:
+    def __init__(self, end):
+        self.current = 0
+        self.end = end
+
+    def __next__(self):
+        if self.current < self.end:
+            value = self.current
+            self.current += 1
+            return value
+        else:
+            raise StopIteration
+
+# --- Demo ---
+my_obj = MyIterable(5)
+
+print("First pass:")
+for num in my_obj:
+    print(num)
+
+print("\nSecond pass (fresh iterator automatically):")
+for num in my_obj:
+    print(num)
+
+
+```
+
 
