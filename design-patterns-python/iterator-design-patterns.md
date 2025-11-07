@@ -38,3 +38,95 @@ classDef detail fill:#f0f0f0,stroke:#555,stroke-width:1px;
 
 ```
 
+### Python script for creating a custom iterator in a single class design (But which can only be used once)
+
+```python
+class MyIterator:
+    def __init__(self, end):
+        self.current = 0
+        self.end = end
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current < self.end:
+            value = self.current
+            self.current += 1
+            return value
+        else:
+            raise StopIteration
+
+# Create an iterator object
+my_iter = MyIterator(5)  # will produce numbers 0 to 4
+
+# Manually loop through iterator
+while True:
+    try:
+        num = next(my_iter)  # get next element
+    except StopIteration:
+        break  # stop when iterator is exhausted
+    print(num)
+print("Done!")
+
+```
+
+### Python script for creating a custom iterator in a single class design (Which can be used again because it has a `reset()` method)
+
+```python
+class MyIterator:
+    def __init__(self, end):
+        self.end = end
+        self.current = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current < self.end:
+            value = self.current
+            self.current += 1
+            return value
+        else:
+            raise StopIteration
+
+    def reset(self):
+        """Reset iteration so it can start again."""
+        self.current = 0
+
+# --- Demo ---
+my_iter = MyIterator(5)
+
+# First iteration
+print("First pass:")
+for num in my_iter:
+    print(num)
+
+# Reset and reuse
+my_iter.reset()
+
+print("\nSecond pass (after reset):")
+for num in my_iter:
+    print(num)
+
+
+```
+
+
+#### Flow chart for the above script
+
+```mermaid
+flowchart LR
+    A[Start] --> B["Create MyIterator\(end\)"]
+    B --> C["Call iter\(my_iter\)"]
+    C --> D["Return self (same object)"]
+    D --> E["Use next() until StopIteration"]
+    E --> F{Want to reuse?}
+    F -- No --> G[End]
+    F -- Yes --> H["Call reset\(\)"]
+    H --> I["Set current = 0"]
+    I --> C
+
+```
+
+
