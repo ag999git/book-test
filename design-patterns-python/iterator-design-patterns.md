@@ -168,4 +168,28 @@ for num in my_obj:
 
 ```
 
+#### Flow chart for 2 class design
+
+```mermaid
+
+flowchart LR
+    A[Start] --> B["Create MyIterable\(end\)"]
+    B --> C["Call iter\(my_obj\)"]
+    C --> D["Return a new MyIterator instance"]
+    D --> E["Use next() until StopIteration"]
+    E --> F{Want to reuse?}
+    F -- No --> G[End]
+    F -- Yes --> C["Call iter\(my_obj\) again"]
+
+
+```
+
+
+
+
+
+
+
+
+
 
