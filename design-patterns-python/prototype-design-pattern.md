@@ -1,4 +1,4 @@
-### XXX
+### Class diagram for the example code on Prototype design pattern
 
 
 
