@@ -23,6 +23,7 @@ classDiagram
     CSVClient --> ListServer : sends CSV string
 
 ```
+---
 
 ### With adapter
 
