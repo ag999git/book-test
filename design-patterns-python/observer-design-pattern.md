@@ -51,36 +51,40 @@ classDiagram
         
     *   `update(message)` → reaction of the subscriber.
 
+4.  **Relationship**:
+    
+    *   Publisher **notifies multiple subscribers** (`1 → *` relationship).
 
 
-#### Flowchart of the script in book
+#### Flowchart of the script in the book
 
 ```mermaid
 
 flowchart TD
     %% Publisher and Subscribers
-    A[Publisher: news_publisher] -->|add_subscriber| B[Subscriber: Alice]
-    A -->|add_subscriber| C[Subscriber: Bob]
+    A[Publisher news_publisher] -->|add subscriber| B[Subscriber Alice]
+    A -->|add subscriber| C[Subscriber Bob]
 
-    %% Notification Flow for first message
-    D[Set message: Breaking News: New Python version released!] --> A
-    A --> B
-    A --> C
-
-    %% Notification Flow for second message
-    E[Set message: Update: Python release date confirmed!] --> A
-    A --> B
-    A --> C
+    %% Notification Flow
+    A --> D[Notify all subscribers]
 
     %% Subscriber reactions
-    B --> F[Print: Alice received notification]
-    C --> G[Print: Bob received notification]
+    D --> B[Subscriber Alice receives update]
+    D --> C[Subscriber Bob receives update]
+
+    %% Output
+    B --> E[Print Alice received notification]
+    C --> F[Print Bob received notification]
+
 
 
 ```
+
+
+
         
-4.  **Relationship**:
-    
-    *   Publisher **notifies multiple subscribers** (`1 → *` relationship).
+
+
+
 
 
