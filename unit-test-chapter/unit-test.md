@@ -23,7 +23,7 @@ flowchart TD
 
 ```
 
-### What ithe above flow chart shows
+### What the above flow chart shows
 
 1.  You start with a Python function (e.g., `add`).
     
@@ -38,4 +38,33 @@ flowchart TD
 6.  If any test fails → you see an **AssertionError**  and can fix the issue.
 
 ---
+
+### Diagram explaining `unittest.TestCase`
+
+
+```mermaid
+
+graph TD
+    A[Your Test File: test_example.py] --> B[unittest Framework]
+    B --> C[Discovers classes that inherit from unittest.TestCase]
+    C --> D[Finds methods that start with test_]
+    D --> E[Runs each test method in its own instance of TestCase]
+    E --> F[Uses assert methods such as assertEqual or assertTrue to check results]
+    F --> G{Pass or Fail}
+    G -->|Pass| H[Record test passed]
+    G -->|Fail| I[Record test failed and show traceback]
+    H --> J[Generate summary of all tests]
+    I --> J
+    J --> K[Display final report in terminal]
+
+
+
+
+```
+
+
+
+
+
+
 
