@@ -58,11 +58,21 @@ graph TD
     J --> K[Display final report in terminal]
 
 
-
-
 ```
 
+#### **Explanation of above diagram**
 
+1.  You write your test file (e.g., `test_math.py`).
+    
+2.  The `unittest` module looks for classes that inherit from `unittest.TestCase`.
+    
+3.  It scans those classes for methods that start with `test_`.
+    
+4.  Each test method runs independently — using assertions to check correctness.
+    
+5.  The framework collects all results (Pass/Fail).
+    
+6.  Finally, it prints a clear summary in the terminal.
 
 
 
