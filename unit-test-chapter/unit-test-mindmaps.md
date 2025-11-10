@@ -120,11 +120,41 @@ mindmap
     Test Principles
       "Isolation - tests do not rely on external state"
       "Automation - run tests automatically"
-      "Fast - tests provide immediate feedback"
-
-
+      "Fast - tests provide immediate feedback
 
 ```
 
+
+### 5. Python Unit Test suites
+
+```mermaid
+
+mindmap
+  root("Python unittest Test Suites")
+
+    Manual Creation
+      "Create TestSuite object"
+      "Add specific test methods"
+      "Add entire TestCase classes"
+      "Gives full control over which tests run"
+
+    Test Loader
+      "Use TestLoader to find tests automatically"
+      "loadTestsFromModule loads all tests from module"
+      "discover finds tests recursively in folder"
+      "Easier for large projects"
+
+    Test Runner
+      "Use TextTestRunner or other runners"
+      "Runs all tests in the suite"
+      "Shows results: dot=pass, F=fail, E=error"
+      "Provides summary of test run"
+
+    Example Workflow
+      "Manual: create suite, add tests, run suite"
+      "Loader: discover tests, run discovered suite"
+
+
+```
 
 
