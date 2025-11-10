@@ -1,8 +1,9 @@
 # Solution to the following 
 # Greeting Function (with a subtle bug, a hidden logic mistake). 
-# In the book the following problem was given:- The problem is is triple Quotes
+# In the book the following problem was given:- The problem is is triple Quotes below
 
 """
+PROBLEM
 # greet_utils.py
 
 # Bug:- an empty string "" or a None value?
@@ -14,6 +15,7 @@ def make_greeting(name):
 
 # The solution is as follows:-
 
+# SOLUTION
 # test_temperature_utils.py
 import unittest
 import temperature_utils
