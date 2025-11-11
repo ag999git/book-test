@@ -193,7 +193,31 @@ mindmap
 
 
 
+### Simple diagram showing how `TestLoader` works with `TestSuite` and `TestRunner` in Python’s unittest framework:
 
+
+```mermaid
+
+flowchart TD
+    A[TestLoader] --> B[TestSuite]
+    B --> C[TestCase1]
+    B --> D[TestCase2]
+    B --> E[TestCase3]
+    F[TestRunner] --> B
+
+    subgraph Discovery
+        G[Load from Module] --> B
+        H[Discover Tests in Directory] --> B
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style F fill:#bfb,stroke:#333,stroke-width:2px
+
+
+
+
+```
 
 
 
