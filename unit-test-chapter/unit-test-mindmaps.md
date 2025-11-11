@@ -214,13 +214,37 @@ flowchart TD
     style B fill:#bbf,stroke:#333,stroke-width:2px
     style F fill:#bfb,stroke:#333,stroke-width:2px
 
-
-
-
 ```
 
 
+#### **Explanation of the diagram**
 
+1.  **TestLoader (A)**
+    
+    -   Finds all tests based on criteria: classes inheriting `TestCase`, methods starting with `test_`, or files matching a pattern.
+        
+    -   Methods:
+        
+        -   `loadTestsFromModule(module)` → loads all tests from a single module.
+            
+        -   `discover(start_dir, pattern='test*.py')` → recursively finds tests across a directory.
+            
+2.  **TestSuite (B)**
+    
+    -   Collects all discovered test cases into a single suite.
+        
+    -   Each `TestCase` (C, D, E) represents an individual unit test method.
+        
+3.  **TestRunner (F)**
+    
+    -   Executes all tests in the suite and reports results (OK, FAIL, ERROR).
+        
+
+----------
+
+This shows the **workflow**:
+
+`TestLoader` discovers tests → builds a `TestSuite` → `TestRunner` executes the suite → reports results.
 
 
 
