@@ -247,6 +247,36 @@ This shows the **workflow**:
 `TestLoader` discovers tests → builds a `TestSuite` → `TestRunner` executes the suite → reports results.
 
 
+### Discover
+
+```mermaid
+
+flowchart TD
+    A["unittest discover"] --> B["TestLoader"]
+    B --> C["TestSuite"]
+    C --> D_add["TestCase test_add"]
+    C --> D_sub["TestCase test_subtract"]
+    C --> D_even["TestCase test_is_even"]
+    C --> D_prime["TestCase test_is_prime"]
+    E["TestRunner"] --> C
+
+    subgraph Discovery_Steps
+        B --> F["Discovers tests in 'tests/' folder\nmatching files like test_*.py"]
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style E fill:#ffb,stroke:#333,stroke-width:2px
+
+
+
+
+
+```
+
+
+
 
 
 
