@@ -269,11 +269,16 @@ flowchart TD
     style C fill:#bfb,stroke:#333,stroke-width:2px
     style E fill:#ffb,stroke:#333,stroke-width:2px
 
-
-
-
-
 ```
+
+#### The following table explains the diagram:-
+
+| Step | Component | What it Does |
+| --- | --- | --- |
+| 1 | unittest discover | Starts automatic discovery from the command line (e.g., python -m unittest discover -s tests) |
+| 2 | TestLoader | Searches for all files matching test_*.py and loads their test cases |
+| 3 | TestSuite | Collects all discovered test cases (e.g., test_add, test_is_prime, etc.) |
+| 4 | TestRunner | Executes the suite and displays results in the terminal. |
 
 
 
