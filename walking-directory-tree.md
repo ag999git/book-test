@@ -19,6 +19,34 @@ E -- No --> F[Done with this branch]
 
 F --> G[Walk completed]
 
+```
+
+
+### XXX
+
+
+```mermaid
+flowchart TD
+
+A[Start] --> B[Set folder path]
+B --> C[Create empty dictionary]
+C --> D[Walk through folders with os.walk]
+D --> E[Loop through files]
+E --> F[Get file extension]
+F --> G{Extension exists in dictionary?}
+
+G -- No --> H[Initialize count to 0]
+H --> I[Increase count]
+
+G -- Yes --> I[Increase count]
+
+I --> J{More files?}
+J -- Yes --> E
+J -- No --> K[Finished scanning]
+
+K --> L[Print file counts]
+L --> M[End]
+
 
 
 
