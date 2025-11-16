@@ -48,6 +48,35 @@ K --> L[Print file counts]
 L --> M[End]
 
 
+```
+
+
+### Creating a ZIP file with compression (ZIP_DEFLATED)
+
+```mermaid
+
+flowchart TD
+    A[Start] --> B[Initialize ZipFile object]
+    B --> C[Begin context with with block]
+    C --> D[Iterate through files in folder]
+    D --> E[Add files to zip with write]
+    E --> F[Close ZipFile]
+    F --> G[End]
+
+
 
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
